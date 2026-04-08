@@ -56,7 +56,7 @@ const TextSummarizer = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
         try {
-            await axios.post('http://localhost:5000/api/tools/usage', {
+            await axios.post('https://word-lab-ucvj.vercel.app/api/tools/usage', {
                 toolName: 'Text Summarizer',
                 inputTextLength: text.length,
                 resultSummary: `Summarized to ${summary.split(' ').length} words`

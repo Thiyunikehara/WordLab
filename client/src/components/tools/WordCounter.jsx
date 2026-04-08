@@ -33,7 +33,7 @@ const WordCounter = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
         try {
-            await axios.post('http://localhost:5000/api/tools/usage', {
+            await axios.post('https://word-lab-ucvj.vercel.app/api/tools/usage', {
                 toolName: 'Word Counter',
                 inputTextLength: text.length,
                 resultSummary: `${stats.words} words, ${stats.characters} chars`

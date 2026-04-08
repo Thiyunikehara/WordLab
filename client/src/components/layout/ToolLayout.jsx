@@ -13,7 +13,7 @@ const ToolLayout = ({ title, description, children }) => {
         if (!token) return; // Only save if user is logged in
 
         try {
-            await axios.post('http://localhost:5000/api/tools/usage', {
+            await axios.post('https://word-lab-ucvj.vercel.app/api/tools/usage', {
                 toolName: title,
                 inputTextLength,
                 resultSummary

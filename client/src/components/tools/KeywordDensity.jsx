@@ -46,7 +46,7 @@ const KeywordDensity = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
         try {
-            await axios.post('http://localhost:5000/api/tools/usage', {
+            await axios.post('https://word-lab-ucvj.vercel.app/api/tools/usage', {
                 toolName: 'Keyword Density',
                 inputTextLength: text.length,
                 resultSummary: `Found ${keywords.length} keywords`

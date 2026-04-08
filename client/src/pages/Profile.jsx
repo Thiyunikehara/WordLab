@@ -16,7 +16,7 @@ const Profile = () => {
             if (!token) return navigate('/login');
 
             try {
-                const res = await axios.get('http://localhost:5000/api/auth/me', {
+                const res = await axios.get('https://word-lab-ucvj.vercel.app/api/auth/me', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setUser(res.data);
@@ -39,7 +39,7 @@ const Profile = () => {
             const updateData = { name: formData.name, email: formData.email };
             if (formData.password) updateData.password = formData.password;
 
-            const res = await axios.put('http://localhost:5000/api/auth/profile', updateData, {
+            const res = await axios.put('https://word-lab-ucvj.vercel.app/api/auth/profile', updateData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUser(res.data.user);

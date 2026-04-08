@@ -54,7 +54,7 @@ const DuplicateWord = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
         try {
-            await axios.post('http://localhost:5000/api/tools/usage', {
+            await axios.post('https://word-lab-ucvj.vercel.app/api/tools/usage', {
                 toolName: 'Duplicate Highlighter',
                 inputTextLength: text.length,
                 resultSummary: `Highlighted ${duplicates.length} duplicate words`

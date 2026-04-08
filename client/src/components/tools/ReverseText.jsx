@@ -37,7 +37,7 @@ const ReverseText = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
         try {
-            await axios.post('http://localhost:5000/api/tools/usage', {
+            await axios.post('https://word-lab-ucvj.vercel.app/api/tools/usage', {
                 toolName: 'Reverse Text',
                 inputTextLength: text.length,
                 resultSummary: `Reversed by ${type}`

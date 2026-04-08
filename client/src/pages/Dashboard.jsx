@@ -21,7 +21,7 @@ const Dashboard = () => {
                 const storedUser = JSON.parse(localStorage.getItem('user'));
                 setUser(storedUser);
 
-                const res = await axios.get('http://localhost:5000/api/tools/history', {
+                const res = await axios.get('https://word-lab-ucvj.vercel.app/api/tools/history', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setHistory(res.data);
