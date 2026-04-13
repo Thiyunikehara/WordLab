@@ -36,12 +36,12 @@ const Home = () => {
     );
 
     return (
-        <motion.div 
+        <motion.div
             initial="initial"
             animate="animate"
             className="max-w-6xl mx-auto px-4"
         >
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -49,36 +49,36 @@ const Home = () => {
             >
                 {/* Advanced Floating Mesh Gradients */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                    <motion.div 
-                        animate={{ 
+                    <motion.div
+                        animate={{
                             x: [0, 40, -20, 0],
                             y: [0, -30, 20, 0],
                             scale: [1, 1.1, 0.95, 1]
                         }}
-                        transition={{ 
-                            duration: 20, 
-                            repeat: Infinity, 
-                            ease: "easeInOut" 
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "easeInOut"
                         }}
                         className="absolute -top-[20%] -left-[10%] w-[60%] h-[150%] rounded-full bg-brand-200/30 dark:bg-brand-500/10 blur-[100px]"
                     />
-                    <motion.div 
-                        animate={{ 
+                    <motion.div
+                        animate={{
                             x: [0, -40, 30, 0],
                             y: [0, 40, -30, 0],
                             scale: [1, 0.9, 1.1, 1]
                         }}
-                        transition={{ 
-                            duration: 25, 
-                            repeat: Infinity, 
-                            ease: "easeInOut" 
+                        transition={{
+                            duration: 25,
+                            repeat: Infinity,
+                            ease: "easeInOut"
                         }}
                         className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[150%] rounded-full bg-blue-200/30 dark:bg-indigo-600/10 blur-[100px]"
                     />
                 </div>
 
                 <div className="relative z-10">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
@@ -87,18 +87,18 @@ const Home = () => {
                         <Type size={14} className="text-brand-500" /> 20+ Free Text Tools
                     </motion.div>
 
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
                         className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]"
                     >
-                        The Ultimate <br className="hidden md:block" />
+                        WordLab — The Ultimate <br className="hidden md:block" />
                         <span className="relative inline-block mt-2">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-500 dark:from-brand-400 dark:via-indigo-400 dark:to-brand-300">
                                 Text Toolkit
                             </span>
-                            <motion.div 
+                            <motion.div
                                 initial={{ scaleX: 0 }}
                                 animate={{ scaleX: 1 }}
                                 transition={{ delay: 0.6, duration: 0.8, ease: "circOut" }}
@@ -106,15 +106,17 @@ const Home = () => {
                             />
                         </span>
                     </motion.h1>
-                    
-                    <motion.p 
+
+                    <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
                         className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium"
                     >
-                        WordLab provides a professional suite of free, fast, and secure tools to analyze, edit, and format your text. Select a tool below to get started.
+                        WordLab provides a professional suite of free, fast, and secure tools to analyze, edit, and format your text. Whether you need to count words, convert text cases, or extract data, WordLab has you covered. Select a WordLab tool below to get started.
                     </motion.p>
+
+                    <p className="hidden">WordLab is a free online text toolkit offering word counter, character counter, sentence counter, text case converter, keyword density checker, text summarizer, Base64 encoder, URL encoder, find and replace, and more. Use WordLab to analyze, edit, format, and transform your text quickly and securely.</p>
                 </div>
             </motion.div>
 
@@ -129,7 +131,7 @@ const Home = () => {
                     All Text Tools {query && <span className="text-sm font-normal text-slate-500 bg-slate-100 px-3 py-1 rounded-full ml-2">Filtering by "{query}"</span>}
                 </h2>
                 {filteredTools.length > 0 ? (
-                    <motion.div 
+                    <motion.div
                         initial="hidden"
                         animate="show"
                         variants={{
@@ -159,13 +161,13 @@ const Home = () => {
                                     className="block h-full bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:border-brand-300 dark:hover:border-brand-500/50 transition-all duration-300 ease-out group backdrop-blur-sm relative overflow-hidden"
                                 >
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-500/5 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    
+
                                     <div className="w-12 h-12 bg-brand-50 dark:bg-brand-900/30 rounded-xl flex items-center justify-center text-brand-600 dark:text-brand-400 mb-5 group-hover:bg-brand-600 group-hover:text-white dark:group-hover:bg-brand-500 transition-all duration-300 shadow-sm group-hover:shadow-brand-200 dark:group-hover:shadow-brand-900/40">
                                         {tool.icon}
                                     </div>
                                     <h3 className="font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{tool.name}</h3>
                                     <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed font-medium">{tool.description}</p>
-                                    
+
                                     <div className="mt-4 flex items-center text-xs font-bold text-brand-600 dark:text-brand-400 opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
                                         Open Tool <span className="ml-1">→</span>
                                     </div>
