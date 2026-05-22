@@ -3,11 +3,20 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import { Activity, Clock, Settings, LogOut } from 'lucide-react';
 import toast from 'react-hot-toast';
+import useTypingEffect from '../hooks/useTypingEffect';
+
+const DASH_GREETINGS = [
+    'Ready to write? ✍️',
+    'Let\'s analyze text 🔍',
+    'Tools at your fingertips 🛠️',
+    'Create something great 🚀',
+];
 
 const Dashboard = () => {
     const [history, setHistory] = useState([]);
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
+    const { displayText, isTyping } = useTypingEffect(DASH_GREETINGS, 70, 35, 2200);
 
     useEffect(() => {
         const fetchUserAndHistory = async () => {
@@ -56,6 +65,14 @@ const Dashboard = () => {
                         </div>
                         <h2 className="text-xl font-bold text-slate-800 truncate">{user.name}</h2>
                         <p className="text-sm text-gray-500 truncate">{user.email}</p>
+                        {/* Typing greeting */}
+                        <p className="text-xs text-brand-600 font-medium mt-2 min-h-[1.2em]">
+                            {displayText}
+                            <span
+                                className="inline-block w-[2px] h-[0.9em] ml-0.5 align-middle bg-brand-500 rounded-sm"
+                                style={{ animation: isTyping ? 'none' : 'wl-blink 0.75s step-end infinite' }}
+                            />
+                        </p>
                     </div>
 
                     <nav className="space-y-2 flex-grow">

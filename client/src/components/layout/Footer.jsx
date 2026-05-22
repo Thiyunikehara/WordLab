@@ -8,7 +8,8 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
                         <Link to="/" className="flex items-center gap-2 mb-4">
-                            <img src="/l.png" alt="WordLab Logo" className="h-8 w-auto object-contain" />
+                            <img src="/image.png" alt="WordLab Logo" className="h-8 w-8 object-contain rounded-full" />
+                            <span className="text-xl font-extrabold tracking-tight text-blue-900 dark:text-blue-300">WordLab</span>
                         </Link>
                         <p className="text-gray-500 mb-4 max-w-sm">
                             Your ultimate toolkit for text analysis, editing, and formatting. Free, fast, and easy to use.

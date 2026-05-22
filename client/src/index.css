@@ -65,3 +65,9 @@
     --color-brand-700: #c7d2fe;   /* Lightest */
   }
 }
+
+/* Typing cursor blink animation used by useTypingEffect hook */
+@keyframes wl-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

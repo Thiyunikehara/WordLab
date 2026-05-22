@@ -50,9 +50,9 @@ const Navbar = () => {
                             <motion.img 
                                 whileHover={{ rotate: [-5, 5, -5, 0], scale: 1.1 }}
                                 transition={{ duration: 0.5 }}
-                                src="/l.png" 
+                                src="/image.png" 
                                 alt="WordLab Logo" 
-                                className="h-10 w-auto object-contain" 
+                                className="h-10 w-10 object-contain rounded-full" 
                             />
                             <span className="text-2xl font-extrabold tracking-tight text-blue-900 dark:text-blue-300">
                                 WordLab

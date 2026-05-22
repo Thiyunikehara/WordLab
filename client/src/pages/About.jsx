@@ -1,11 +1,32 @@
+import useTypingEffect from '../hooks/useTypingEffect';
+
+const ABOUT_WORDS = [
+    'students',
+    'professionals',
+    'developers',
+    'writers',
+    'researchers',
+];
+
 const About = () => {
+    const { displayText, isTyping } = useTypingEffect(ABOUT_WORDS, 90, 50, 1800);
+
     return (
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h1 className="text-3xl font-bold text-slate-800 mb-6">About WordLab</h1>
 
             <div className="prose prose-slate max-w-none">
                 <p className="text-lg text-gray-600 mb-6">
-                    WordLab is your go-to destination for quick, reliable, and entirely free text manipulation tools. Our mission is to make text analysis and formatting effortless for students, professionals, and writers worldwide.
+                    WordLab is your go-to destination for quick, reliable, and entirely free text manipulation tools.
+                    Our mission is to make text analysis and formatting effortless for{' '}
+                    <span className="font-semibold text-brand-600">
+                        {displayText}
+                        <span
+                            className="inline-block w-[2px] h-[1em] ml-0.5 align-middle bg-brand-500 rounded-sm"
+                            style={{ animation: isTyping ? 'none' : 'wl-blink 0.75s step-end infinite' }}
+                        />
+                    </span>{' '}
+                    worldwide.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-slate-800 mt-8 mb-4">Our Story</h2>
